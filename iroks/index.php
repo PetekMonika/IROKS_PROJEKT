@@ -1,151 +1,336 @@
-<?php include('server.php'); ?>
 <!DOCTYPE html>
-<html>
+
+<?php
+include_once 'connect.php';
+header('Content-Type: text/html; charset=utf-8');
+?>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Spotlight</title>
+  <meta charset="utf-8">
+  <title>EventFest Maribor</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <!--
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+--->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <!-- Libraries CSS Files -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="animate/animate.min.css" rel="stylesheet">
+  <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File
+  <link href="../css/style.css" rel="stylesheet">
+    -->
+
 </head>
+
 <body>
 <script type="text/javascript" src="bootstrap.min.js"></script>
 
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
     <div class="container">
-        <a href="index.php"><img src="https://i1.wp.com/spotlighttv.co.uk/wp-content/uploads/2019/06/Cropped-Spotlight-Logo-1.jpg?resize=1024%2C542" alt="Spotlight" width="100" height="50"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" style="color: white" href="index.php">Domov</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="spored.php">Spored</a>
-                </li>
-                <li class="nav-item" >
-                    <a class="nav-link" href="arhiv.php">Arhiv</a>
-                </li>
-                <li class="nav-item style="color: white"">
-                <?php if(empty($_SESSION['username'])) : ?>
-                    <a class="nav-link" style="color: white" href="login.php"><i class='far fa-user' style='color:white'></i> Prijava </a>
-                <?php else : ?>
-                    <a class="nav-link" style="color: white" href="user.php"><i class='far fa-user' style='color:white'></i> <?php echo $_SESSION['username']; ?> </a>
-                <?php endif; ?>
 
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"></a>
+      </div>
 
+      <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container">
+        <ul class="navbar-nav ml-auto">
+          <li class="active"><a href="#intro">Domov</a></li>
+          <li><a href="#about">O nas</a></li>
+          <li><a href="#services">Dogodki</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
 
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</nav>
-
-
-
-<!-- Page Content -->
-<div class="container">
-
-    <!-- Jumbotron Header -->
-    <header class="jumbotron bg-dark my-4">
-        <img src="https://media0.giphy.com/media/Qvp6Z2fidQR34IcwQ5/source.gif" width="1040" height="500">
-    </header>
-
-
-    <!-- Page Features -->
-    <div class="row text-center">
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" height="200"  src="https://image.winudf.com/v2/image/bXBsLmNvbS5jb21pbmdzb29uX3NjcmVlbl8wXzE1MzQ3NTgxODFfMDQ0/screen-0.jpg?fakeurl=1&type=.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">KMALU V KINU</h4>
-                </div>
-                <div class="card-footer">
-                    <a href="kmalu.php" class="btn btn-dark">VEČ!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" height="200" src="https://burnzozobra.com/wp-content/uploads/2016/05/event-tickets-pic71_0.png" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">ČRNI PETEK</h4>
-                    <p class="card-text">Vsak petek 1+1 GRATIS</p>
-                </div>
-                <div class="card-footer">
-                    <a href="crniPetek.php" class="btn btn-dark">VEČ!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" height="200" src="https://media-assets-05.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-108945-broadcasttv_0--default--560.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">SPORED</h4>
-                </div>
-                <div class="card-footer">
-                    <a href="spored.php" class="btn btn-dark">VEČ!</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" height="200" src="https://www.e3s.be/wp-content/uploads/2018/09/496493704-612x612.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="card-title">ARHIV</h4>
-                    <p class="card-text">Poglejte si arhiv filmov</p>
-                </div>
-                <div class="card-footer">
-                    <a href="arhiv.php" class="btn btn-dark">VEČ!</a>
-                </div>
-            </div>
-        </div>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+          </div>
+      </nav><!-- .main-nav -->
 
     </div>
-    <!-- /.row -->
+  </header><!-- #header -->
 
-</div>
-<!-- /.container -->
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix">
     <div class="container">
-        <p class="m-0 text-left text-white">KONTAKT</p>
-        <p class="m-0 text-left text-white">Naslov: Spotlight, Glavna cesta 1, 2000 Maribor, Slovenija</p>
-        <p class="m-0 text-left text-white">Email: info@spotlight.si</p>
-        <p class="m-0 text-left text-white">Telefon: 041 111 222</p>
+<!--
+      <div class="intro-img">
+        <img src="img/intro-img.svg" alt="" class="img-fluid">
+      </div>
+-->
+      <div class="intro-info">
+        <h2>Pravi FEST<br><span>na</span><br>pravem mestu za vas!</h2>
+        <div>
+          <a href="#about" class="btn-get-started scrollto">Pa začnimo</a>
+          <a href="#services" class="btn-services scrollto">Naši dogodki</a>
+        </div>
+      </div>
+
     </div>
-    <!-- /.container -->
-</footer>
+  </section><!-- #intro -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <main id="main">
 
-<script id="dsq-count-scr" src="//startbootstrap.disqus.com/count.js" async type="25c172173236f4ddce5eb462-text/javascript"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type="25c172173236f4ddce5eb462-text/javascript"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous" type="25c172173236f4ddce5eb462-text/javascript"></script>
-<script type="25c172173236f4ddce5eb462-text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-<script type="25c172173236f4ddce5eb462-text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
-<script src="/assets/js/scripts.js" type="25c172173236f4ddce5eb462-text/javascript"></script>
-<script type="25c172173236f4ddce5eb462-text/javascript">
-    $("#desktopToggle").on('click', function(e) {
-      e.preventDefault();
-      $(".iframe-preview").removeClass("iframe-preview-mobile");
-    });
-    $("#mobileToggle").on('click', function(e) {
-      e.preventDefault();
-      $(".iframe-preview").addClass("iframe-preview-mobile");
-    });
-  </script>
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>O nas</h3>
+          <p></p>
+        </header>
+
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <p>
+
+            </p>
+
+            <div class="icon-box wow fadeInUp">
+              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
+              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-photo"></i></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+            <img src="img/about-img.svg" class="img-fluid" alt="">
+          </div>
+        </div>
+
+        <div class="row about-extra">
+          <div class="col-lg-6 wow fadeInUp">
+            <img src="img/about-extra-1.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+            <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
+            <p>
+              Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
+            </p>
+            <p>
+              Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
+            </p>
+          </div>
+        </div>
+
+        <div class="row about-extra">
+          <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+            <img src="img/about-extra-2.svg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+            <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
+            <p>
+             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
+            </p>
+            <p>
+              Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
+            </p>
+            <p>
+              Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
+            </p>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Dogodki</h3>
+          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+
+              <h3>Vnos Dogodka</h3>
+              <br>
+              <form action="insert.php" method="post">
+
+                  Ime dogodka: <input type="text" name="ime">
+                  <br>
+                  <br>
+                  Opis dogodka: <textarea rows="4" cols="50" name="opis"></textarea>
+                  <br>
+                  <br>
+
+                  Kraj dogodka:
+                  <select name="kraj_dogodka">
+                      <option value="Lent">Lent</option>
+                      <option value="Trg Leona Štuklja">Trg Leona Štuklja</option>
+                      <option value="Dvorana Tabor">Dvorana Tabor</option>
+
+
+                  </select>
+                <br>
+                  Čas dogodka:
+                  <select name="cas_dogodka">
+                      <option value="Januar">Januar</option>
+                      <option value="Februar">Februar</option>
+                      <option value="Marec">Marec</option>
+
+
+                  </select>
+
+
+                  <br>
+                  <input type="submit" value="Potrdi">
+
+<br>
+                  <div class="row">
+
+                      <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+                          <div class="box">
+                  <div id="Januar" class="tabcontent">
+
+                      <?php
+                      $sql = "SELECT * FROM dogodek WHERE Kraj='Lent';";
+                      $result = mysqli_query($conn, $sql);
+                      $resultCheck = mysqli_num_rows($result);
+                      if($resultCheck > 0 ){
+                          while ($row = mysqli_fetch_assoc($result)){
+                              echo
+                                  "<option value = '".$row['Ime']."'>".$row['Opis']."'>".$row['Kraj']."'>".$row['Cas']."</option>";
+                          }
+                      }
+                      ?>
+
+
+                  </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+      Why Us Section
+    ============================-->
+
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+
+
+    <!--==========================
+      Clients Section
+    ============================-->
+
+
+    <!--==========================
+      Team Section
+    ============================-->
+
+
+    <!--==========================
+      Clients Section
+    ============================-->
+
+
+    <!--==========================
+      Contact Section
+    ============================-->
+
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="jquery/jquery.min.js"></script>
+  <script src="jquery/jquery-migrate.min.js"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="easing/easing.min.js"></script>
+  <script src="mobile-nav/mobile-nav.js"></script>
+  <script src="wow/wow.min.js"></script>
+  <script src="waypoints/waypoints.min.js"></script>
+  <script src="counterup/counterup.min.js"></script>
+  <script src="owlcarousel/owl.carousel.min.js"></script>
+  <script src="isotope/isotope.pkgd.min.js"></script>
+  <script src="lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="../contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../js/main.js"></script>
+
 </body>
 </html>
