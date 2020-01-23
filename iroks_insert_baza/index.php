@@ -192,7 +192,7 @@ header('Content-Type: text/html; charset=utf-8');
 
         <header class="section-header">
           <h3>Dogodki</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+          <p>Vsi dogodki še nimajo natačnih datumov! O datumih vas še obvestimo.</p>
         </header>
 
         <div class="row">
@@ -215,6 +215,7 @@ header('Content-Type: text/html; charset=utf-8');
                       <option value="Lent">Lent</option>
                       <option value="Trg Leona Štuklja">Trg Leona Štuklja</option>
                       <option value="Dvorana Tabor">Dvorana Tabor</option>
+                      <option value="Lenart">Lenart</option>
 
 
                   </select>
@@ -233,34 +234,48 @@ header('Content-Type: text/html; charset=utf-8');
                   <input type="submit" value="Potrdi">
 
 <br>
-                  <div class="row">
 
-                      <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-                          <div class="box">
+                  <br><br>
+
                   <div id="Januar" class="tabcontent">
 
+
                       <?php
-                      $sql = "SELECT * FROM dogodek WHERE Kraj='Lent';";
+                      $sql = "SELECT * FROM dogodek";
                       $result = mysqli_query($conn, $sql);
                       $resultCheck = mysqli_num_rows($result);
-                      if($resultCheck > 0 ){
-                          while ($row = mysqli_fetch_assoc($result)){
+                      if($resultCheck > 0 ) {
+                          while ($row = mysqli_fetch_assoc($result)) {
                               echo
-                                  "<option value = '".$row['Ime']."'>".$row['Opis']."'>".$row['Kraj']."'>".$row['Cas']."</option>";
+                                  "<div>
+                <h2>" . $row['Ime'] . "</h2>
+                <p>" . $row['Opis'] . "</p>
+                <p><b>Kraj dogodka:</b> " . $row['Kraj'] . "</p>
+                <p><b>Čas dogodka: </b>" . $row['Cas'] . "</p>
+				              
+                </div>";
+
                           }
                       }
                       ?>
 
 
+
+
+
                   </div>
+<h3>Dvorana lent</h3>
+                  <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=dvorana%20lent&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 
+                  <br>
+                  <br>
+                  <h3>Dvorana tabor</h3>
+                  <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=dvorana%20tabor&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+                  <br>
+                  <br>
+                  <h3>Trg Leona Štuklja</h3>
+                  <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Trg%20Leona%20Stuklja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 
-
-
-
-
-
-            </div>
           </div>
 
         </div>
