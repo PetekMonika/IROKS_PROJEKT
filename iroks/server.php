@@ -113,5 +113,15 @@ if(isset($_POST['arhiv'])){
 }
 
 
+if(isset($_POST['prijava'])) {
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $dogodek = mysqli_real_escape_string($db, $_POST['dogodek']);
+
+    $sql = "INSERT INTO prijava (username, dogodek)
+                        VALUES ('$username', '$dogodek')";
+
+    mysqli_query($db, $sql);
+
+}
 ?>
 

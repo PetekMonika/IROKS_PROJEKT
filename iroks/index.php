@@ -2,6 +2,7 @@
 
 <?php
 include_once 'connect.php';
+include 'server.php';
 header('Content-Type: text/html; charset=utf-8');
 ?>
 <html lang="en">
@@ -20,9 +21,7 @@ header('Content-Type: text/html; charset=utf-8');
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <!--
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
---->
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
@@ -33,9 +32,9 @@ header('Content-Type: text/html; charset=utf-8');
   <link href="owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File
-  <link href="../css/style.css" rel="stylesheet">
-    -->
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -45,51 +44,58 @@ header('Content-Type: text/html; charset=utf-8');
   <!--==========================
   Header
   ============================-->
-  <header id="header" class="fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-color: darkmagenta">
     <div class="container">
+        <a href="index.php"><img src="https://d38trduahtodj3.cloudfront.net/images.ashx?t=ig&rid=FFEA&i=eventfest.jpg&w=330&h=330&cropbox=1&cropboxhpos=center&stf=1" alt="EvenFest" width="75" height="50"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white" href="index.php">Domov</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" style="color: white" href="#services" class="btn-services scrollto" >Dogodki</a>
+                </li>
+                <li class="nav-item style="color: white"">
+                <?php if(empty($_SESSION['username'])) : ?>
+                    <a class="nav-link" style="color: white" href="login.php"><i class='far fa-user' style='color:white'></i> Prijava </a>
+                <?php else : ?>
+                    <a class="nav-link" style="color: white" href="user.php"><i class='far fa-user' style='color:white'></i> <?php echo $_SESSION['username']; ?> </a>
+                <?php endif; ?>
 
-      <div class="logo float-left">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"></a>
-      </div>
 
-      <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container">
-        <ul class="navbar-nav ml-auto">
-          <li class="active"><a href="#intro">Domov</a></li>
-          <li><a href="#about">O nas</a></li>
-          <li><a href="#services">Dogodki</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+                </li>
+            </ul>
 
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-          </div>
-      </nav><!-- .main-nav -->
-
+        </div>
     </div>
-  </header><!-- #header -->
+</nav>
 
   <!--==========================
     Intro Section
   ============================-->
-  <section id="intro" class="clearfix">
+
     <div class="container">
-<!--
+
       <div class="intro-img">
-        <img src="img/intro-img.svg" alt="" class="img-fluid">
+        <img src="https://www.krock1057.ca/wp-content/uploads/sites/21/2018/04/iStock-concert-1024x576.jpg" alt="" class="img-fluid">
       </div>
--->
-      <div class="intro-info">
+
+      <div class="intro-info" >
         <h2>Pravi FEST<br><span>na</span><br>pravem mestu za vas!</h2>
-        <div>
-          <a href="#about" class="btn-get-started scrollto">Pa začnimo</a>
-          <a href="#services" class="btn-services scrollto">Naši dogodki</a>
-        </div>
+
       </div>
 
     </div>
-  </section><!-- #intro -->
+  <!-- #intro -->
+
+<br><br><br>
+
+
+
+
 
   <main id="main">
 
@@ -113,150 +119,92 @@ header('Content-Type: text/html; charset=utf-8');
 
             <div class="icon-box wow fadeInUp">
               <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <h4 class="title">KAJ JE EVENTFEST?</h4>
+              <p class="description">EventFest je spletna stran, ki ima zbrana vsa dogajanja v mestu MAribor in njegovi okolici.</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
               <div class="icon"><i class="fa fa-photo"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h4 class="title">PRIJAVA NA DOGODKE</h4>
+              <p class="description">Večji dogodki ne potrebujejo prijave, saj so organizirani na odprtih lokacijah, kjer je prostora za veliko ljudi,
+                  vendar s prijavo daste organizatorejm statističen pregled in s tem omogočite bolje organiziran dogodek.
+                  Manjši dogodki pa so namenjeni manjšemu številu ljudi, zato se je nanje treba prijaviti in si s tem zagotoviti svoje mesto.
+                  Prijava in udeležitev sta brezplačna.</p>
             </div>
 
-            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
 
           </div>
 
+
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="img/about-img.svg" class="img-fluid" alt="">
+            <img src="http://service.oeticket.com/wp-content/uploads/2016/05/EL2_Klemen-Stular.jpg" class="img-fluid" alt="">
+
           </div>
         </div>
 
         <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
-            <img src="img/about-extra-1.svg" class="img-fluid" alt="">
+
+              <h3>Dvorana Lent</h3>
+              <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=dvorana%20lent&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
+              <br>
+              <br>
+              <h3>Dvorana Tabor</h3>
+              <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=dvorana%20tabor&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+              <br>
+              <br>
+              <h3>Trg Leona Štuklja</h3>
+              <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Trg%20Leona%20Stuklja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+              <br>
+              <br>
+              <h3>Lenart</h3>
+
+              <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lenart&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
           </div>
-          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
-            <p>
-              Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
-            </p>
-            <p>
-              Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
-            </p>
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+          <form method="post" action="prijava.php">
+              <section id="services" class="section-bg">
+              <h3>Dogodki</h3>
+              <p>Vsi dogodki še nimajo natačnih datumov! O datumih vas še obvestimo.</p>
+              <p>
+                  <br>
+
+                  <?php
+                  $sql = "SELECT * FROM dogodek";
+                  $result = mysqli_query($conn, $sql);
+                  $resultCheck = mysqli_num_rows($result);
+                  if($resultCheck > 0 ) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                          $ime = $row['Ime'];
+                          echo
+                              "<div>
+                <h2>" . $row['Ime'] . "</h2>
+                <p>" . $row['Opis'] . "</p>
+                <p><b>Kraj dogodka:</b> " . $row['Kraj'] . "</p>
+                <p><b>Čas dogodka: </b>" . $row['Cas'] . "</p>
+				 <a name=\"prijava\" href=\"prijava.php?dogodek=$ime\" class=\"btn btn-warning\" >PRIJAVA NA DOGODEK</a>
+				 <br>     
+				 <br>
+				 <br>
+                </div>";
+
+                      }
+                  }
+
+                  ?></p>
+              </section>
+          </form>
+          </div>
           </div>
         </div>
 
-        <div class="row about-extra">
-          <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/about-extra-2.svg" class="img-fluid" alt="">
-          </div>
 
-          <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-            <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
-            <p>
-             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt. 
-            </p>
-            <p>
-              Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-            </p>
-            <p>
-              Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
-            </p>
-          </div>
-          
-        </div>
-
-      </div>
-    </section><!-- #about -->
 
     <!--==========================
       Services Section
     ============================-->
-    <section id="services" class="section-bg">
-      <div class="container">
-
-        <header class="section-header">
-          <h3>Dogodki</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-
-              <h3>Vnos Dogodka</h3>
-              <br>
-              <form action="insert.php" method="post">
-
-                  Ime dogodka: <input type="text" name="ime">
-                  <br>
-                  <br>
-                  Opis dogodka: <textarea rows="4" cols="50" name="opis"></textarea>
-                  <br>
-                  <br>
-
-                  Kraj dogodka:
-                  <select name="kraj_dogodka">
-                      <option value="Lent">Lent</option>
-                      <option value="Trg Leona Štuklja">Trg Leona Štuklja</option>
-                      <option value="Dvorana Tabor">Dvorana Tabor</option>
-
-
-                  </select>
-                <br>
-                  Čas dogodka:
-                  <select name="cas_dogodka">
-                      <option value="Januar">Januar</option>
-                      <option value="Februar">Februar</option>
-                      <option value="Marec">Marec</option>
-
-
-                  </select>
-
-
-                  <br>
-                  <input type="submit" value="Potrdi">
-
-<br>
-                  <div class="row">
-
-                      <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-                          <div class="box">
-                  <div id="Januar" class="tabcontent">
-
-                      <?php
-                      $sql = "SELECT * FROM dogodek WHERE Kraj='Lent';";
-                      $result = mysqli_query($conn, $sql);
-                      $resultCheck = mysqli_num_rows($result);
-                      if($resultCheck > 0 ){
-                          while ($row = mysqli_fetch_assoc($result)){
-                              echo
-                                  "<option value = '".$row['Ime']."'>".$row['Opis']."'>".$row['Kraj']."'>".$row['Cas']."</option>";
-                          }
-                      }
-                      ?>
-
-
-                  </div>
-
-
-
-
-
-
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #services -->
 
     <!--==========================
       Why Us Section

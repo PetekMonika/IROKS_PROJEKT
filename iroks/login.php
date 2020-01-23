@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="header" style="background-color: mediumblue">
+<div class="header" style="background-color: darkmagenta">
     <h2>Log in</h2>
 </div>
 
@@ -23,7 +23,7 @@
         <input type="password" name="password">
     </div>
     <div class="input-group">
-        <button type="submit" name="login" class="btn" style="background-color: mediumblue">Log in</button>
+        <button type="submit" name="login" class="btn" style="background-color: darkmagenta">Log in</button>
     </div>
 
     <p>
