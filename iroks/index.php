@@ -163,8 +163,8 @@ header('Content-Type: text/html; charset=utf-8');
               <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lenart&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://ytify.com">youtube to mp3</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
           </div>
 
-          <div class="col-lg-6 content order-lg-1 order-2">
-          <form method="post" action="prijava.php">
+          <div class="col-lg-6 content order-lg-1 order-2" style="border-radius: 5px">
+          <form method="post" action="prijava.php" style="width: 105%">
               <section id="services" class="section-bg">
               <h3>Dogodki</h3>
               <p>Vsi dogodki še nimajo natačnih datumov! O datumih vas še obvestimo.</p>
