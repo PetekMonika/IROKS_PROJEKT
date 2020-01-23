@@ -7,9 +7,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="header" style="background-color: #343A40">
+<div class="header" style="background-color: mediumblue">
     <h2>Log in</h2>
 </div>
+
 
 <form method="post" action="login.php">
     <?php include('errors.php'); ?>
@@ -22,7 +23,7 @@
         <input type="password" name="password">
     </div>
     <div class="input-group">
-        <button type="submit" name="login" class="btn" style="background-color: #343A40">Log in</button>
+        <button type="submit" name="login" class="btn" style="background-color: mediumblue">Log in</button>
     </div>
 
     <p>

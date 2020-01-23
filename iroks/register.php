@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="header" style="background-color: #343A40">
+<div class="header" style="background-color: mediumblue">
     <h2>Register</h2>
 </div>
 
@@ -32,7 +32,7 @@
         <input type="password" name="password_2">
     </div>
     <div class="input-group">
-        <button type="submit" name="register" class="btn" style="background-color: #343A40">Register</button>
+        <button type="submit" name="register" class="btn" style="background-color: mediumblue">Register</button>
     </div>
     <p>
         Already a member? <a href="login.php">Sign in</a>

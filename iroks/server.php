@@ -11,7 +11,7 @@ $title = "";
 
 // CONNECT TO THE SQLiteDatabase
 
-$db = mysqli_connect('localhost', 'root', '', 'dsr');
+$db = mysqli_connect('localhost', 'root', '', 'iroks');
 
 // IF THE REGISTER BUTTON IS CLICKED
 
