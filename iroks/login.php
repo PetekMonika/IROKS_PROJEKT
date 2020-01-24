@@ -29,6 +29,9 @@
     <p>
         Not yet a member? <a href="register.php">Sign up</a>
     </p>
+    <p>
+         <a href="index.php">Domov</a>
+    </p>
 </form>
 
 </body>

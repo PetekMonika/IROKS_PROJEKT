@@ -84,7 +84,10 @@ header('Content-Type: text/html; charset=utf-8');
       </div>
 
       <div class="intro-info" >
-        <h2>Pravi FEST<br><span>na</span><br>pravem mestu za vas!</h2>
+          <h1>Pravi<span style="color: darkmagenta"> FEST </span></h1>
+
+          <h1>na</h1>
+          <h1>pravem mestu za vas!</h1>
 
       </div>
 
@@ -105,18 +108,13 @@ header('Content-Type: text/html; charset=utf-8');
     <section id="about">
       <div class="container">
 
-        <header class="section-header">
-          <h3>O nas</h3>
-          <p></p>
-        </header>
+
 
         <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
-            <p>
-
-            </p>
-
+              <h3>O nas</h3>
+              <br>
             <div class="icon-box wow fadeInUp">
               <div class="icon"><i class="fa fa-shopping-bag"></i></div>
               <h4 class="title">KAJ JE EVENTFEST?</h4>

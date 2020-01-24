@@ -37,6 +37,9 @@
     <p>
         Already a member? <a href="login.php">Sign in</a>
     </p>
+    <p>
+        <a href="index.php">Domov</a>
+    </p>
 </form>
 
 </body>
